@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Summarizer</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse" style="background-color: #d9534f">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#bs-example-navbar-collapse-1"
+            aria-expanded="false"
+            style="color: rgb(68, 2, 2)"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand active"
+            ><p style="font-weight: bold; color: white">Text Summarizer</p></a
+          >
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a style="color: rgb(68, 2, 2)">About Us</a>
+            </li>
+            <li>
+              <a style="color: rgb(68, 2, 2)">Explanation</a>
+            </li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+    <div class="mx-3">
+      <div class="jumbotron text-center mt-5">
+        <!-- <h1 class="text-center page-header" id="pd"></h1> -->
+        <div
+          style="
+            height: 5vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 1px;
+          "
+        >
+          <p
+            style="
+              font-size: 3rem;
+              font-weight: bold;
+              letter-spacing: 0.1rem;
+              text-align: center;
+              overflow: hidden;
+            "
+          >
+            Summarize any
+            <span class="typed-text" style="color: #dc3545"></span
+            ><span
+              class="cursor"
+              style="
+                display: inline-block;
+                background-color: rgb(34, 30, 30);
+                margin-left: 0.1rem;
+                width: 3px;
+                animation: blink 1s infinite;
+              "
+              >&nbsp;</span
+            >
+            <br />
+          </p>
+        </div>
+        <div>
+          <p
+            style="
+              font-size: 3rem;
+
+              font-weight: bold;
+              letter-spacing: 0.1rem;
+              text-align: center;
+              overflow: hidden;
+            "
+          >
+            in a click
+          </p>
+        </div>
+        <p>
+          This helps you summarize any piece of text into concise, easy to
+          digest content so you can free<br />
+          yourself from information overload.
+        </p>
+      </div>
+    </div>
+    <div class="form-group has-error container" style="width: 75%">
+      <label
+        for="Paste Article Text"
+        class="container text-center"
+        style="
+          font-size: 3rem;
+          font-weight: bold;
+          letter-spacing: 0.1rem;
+          text-align: center;
+          overflow: hidden;
+        "
+        >Summarized Text</label
+      >
+      <h4 class="h4">{{ pred }}</h4>
+    </div>
+
+    <script>
+      const typedTextSpan = document.querySelector(".typed-text");
+      const cursorSpan = document.querySelector(".cursor");
+
+      const textArray = ["text", "article", "document", "essay"];
+      const typingDelay = 200;
+      const erasingDelay = 100;
+      const newTextDelay = 2000; // Delay between current and next text
+      let textArrayIndex = 0;
+      let charIndex = 0;
+
+      function type() {
+        if (charIndex < textArray[textArrayIndex].length) {
+          if (!cursorSpan.classList.contains("typing"))
+            cursorSpan.classList.add("typing");
+          typedTextSpan.textContent +=
+            textArray[textArrayIndex].charAt(charIndex);
+          charIndex++;
+          setTimeout(type, typingDelay);
+        } else {
+          cursorSpan.classList.remove("typing");
+          setTimeout(erase, newTextDelay);
+        }
+      }
+
+      function erase() {
+        if (charIndex > 0) {
+          if (!cursorSpan.classList.contains("typing"))
+            cursorSpan.classList.add("typing");
+          typedTextSpan.textContent = textArray[textArrayIndex].substring(
+            0,
+            charIndex - 1
+          );
+          charIndex--;
+          setTimeout(erase, erasingDelay);
+        } else {
+          cursorSpan.classList.remove("typing");
+          textArrayIndex++;
+          if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+          setTimeout(type, typingDelay + 1100);
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // On DOM Load initiate the effect
+        if (textArray.length) setTimeout(type, newTextDelay + 250);
+      });
+    </script>
+  </body>
+</html>

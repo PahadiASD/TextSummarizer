@@ -1,0 +1,60 @@
+asttokens @ file:///opt/conda/conda-bld/asttokens_1646925590279/work
+autopep8==1.6.0
+backcall==0.2.0
+certifi==2020.6.20
+charset-normalizer==2.0.12
+click==8.1.2
+colorama @ file:///tmp/build/80754af9/colorama_1603211150991/work
+debugpy @ file:///C:/ci_310/debugpy_1642079916595/work
+decorator==4.4.2
+executing @ file:///opt/conda/conda-bld/executing_1646925071911/work
+filelock==3.6.0
+Flask==2.1.1
+gunicorn==20.1.0
+huggingface-hub==0.5.1
+idna==3.3
+ipykernel @ file:///C:/ci/ipykernel_1647000977835/work/dist/ipykernel-6.9.1-py3-none-any.whl
+ipython @ file:///C:/ci/ipython_1648799052714/work
+itsdangerous==2.1.2
+jedi @ file:///C:/ci/jedi_1644315428305/work
+Jinja2==3.1.1
+joblib==1.1.0
+jupyter-client @ file:///tmp/build/80754af9/jupyter_client_1601311786391/work
+jupyter-core @ file:///C:/ci/jupyter_core_1646994639510/work
+MarkupSafe==2.1.1
+matplotlib-inline @ file:///tmp/build/80754af9/matplotlib-inline_1628242447089/work
+nest-asyncio @ file:///tmp/build/80754af9/nest-asyncio_1601499549014/work
+numpy==1.22.3
+packaging==21.3
+parso @ file:///tmp/build/80754af9/parso_1596826841367/work
+pickleshare @ file:///tmp/build/80754af9/pickleshare_1606932040724/work
+Pillow==9.1.0
+prompt-toolkit @ file:///tmp/build/80754af9/prompt-toolkit_1602688806899/work
+pure-eval @ file:///opt/conda/conda-bld/pure_eval_1646925070566/work
+pycodestyle==2.8.0
+Pygments @ file:///tmp/build/80754af9/pygments_1600458456400/work
+pyparsing==3.0.8
+python-dateutil==2.8.1
+pywin32==302
+PyYAML==6.0
+pyzmq @ file:///C:/ci_310/pyzmq_1642090360481/work
+regex==2022.3.15
+requests==2.27.1
+sacremoses==0.0.49
+sentencepiece==0.1.96
+six==1.16.0
+stack-data @ file:///opt/conda/conda-bld/stack_data_1646927590127/work
+tokenizers==0.12.1
+toml==0.10.2
+torch==1.11.0+cu113
+torchaudio==0.11.0+cu113
+torchvision==0.12.0+cu113
+tornado @ file:///C:/ci_310/tornado_1642093111997/work
+tqdm==4.64.0
+traitlets @ file:///tmp/build/80754af9/traitlets_1636710298902/work
+transformers==4.18.0
+typing_extensions==4.1.1
+urllib3==1.26.9
+wcwidth @ file:///tmp/build/80754af9/wcwidth_1593447189090/work
+Werkzeug==2.1.1
+wincertstore==0.2
